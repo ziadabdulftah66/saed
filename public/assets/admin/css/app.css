@@ -1,0 +1,17 @@
+@import url("bootstrap-extended.css");
+@import url("colors.css");
+@import url("components.css");
+.btndown{
+
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btndown:hover {
+    background-color: RoyalBlue;
+}
