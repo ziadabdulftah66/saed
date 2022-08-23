@@ -37,12 +37,13 @@
                 </span>
 
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href=""><i
+                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="{{route('edit.profile')}}"><i
                                     class="ft-user"></i> Edit profile </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href=""><i class="ft-power"></i>Logout
+                            <a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i>Logout
                             </a>
                         </div>
+
                     </li>
                     <ul class="nav navbar-nav float-right">
                         <li class="dropdown dropdown-user nav-item">
