@@ -27,6 +27,66 @@ Route::group([
         Route::put('updateProfile/{id}', 'App\Http\Controllers\Dashboard\ProfileController@updateprofile')->name('updateProfile');
     });
     ///////////////
+    ################################## categories routes ######################################
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Categories@index')->name('admin.categories');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Categories@create')->name('admin.categories.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Categories@store')->name('admin.categories.store');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Categories@edit')->name('admin.categories.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Categories@update')->name('admin.categories.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Categories@destroy')->name('admin.categories.delete');
+
+    });
+
+    ################################## end categories    #######################################
+
+    ################################## Sections routes ######################################
+    Route::group(['prefix' => 'Sections'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Sections@index')->name('admin.sections');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Sections@create')->name('admin.sections.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Sections@store')->name('admin.sections.store');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Sections@edit')->name('admin.sections.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Sections@update')->name('admin.sections.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Sections@destroy')->name('admin.sections.delete');
+
+    });
+
+    ################################## end Sections   #######################################
+
+    ################################## Brands routes ######################################
+    Route::group(['prefix' => 'Brands'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Brands@index')->name('admin.brands');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Brands@create')->name('admin.brands.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Brands@store')->name('admin.brands.store');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Brands@edit')->name('admin.brands.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Brands@update')->name('admin.brands.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Brands@destroy')->name('admin.brands.delete');
+
+    });
+
+    ################################## end Brands   #######################################
+    ################################## products routes ######################################
+    Route::group(['prefix' => 'Products'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Products@index')->name('admin.products');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Products@create')->name('admin.products.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Products@store')->name('admin.products.store');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Products@edit')->name('admin.products.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Products@update')->name('admin.products.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Products@destroy')->name('admin.products.delete');
+
+    });
+
+    ################################## end products   #######################################
+    ################################## users routes ######################################
+    Route::group(['prefix' => 'show_Users'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Users@index')->name('admin.show_users');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Users@create')->name('admin.users.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Users@store')->name('admin.users.store');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Users@destroy')->name('admin.users.delete');
+
+    });
+
+    ################################## end users   #######################################
 });
 
 Route::group([ 'middleware' => 'guest:admin','prefix'=>'admin'], function () {
@@ -34,4 +94,5 @@ Route::group([ 'middleware' => 'guest:admin','prefix'=>'admin'], function () {
     Route::post('postuser', 'App\Http\Controllers\Dashboard\LoginController@postlogin')->name('admin.login');;
 
 });
+
 

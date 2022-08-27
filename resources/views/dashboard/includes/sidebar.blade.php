@@ -6,33 +6,78 @@
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">Home </span></a>
             </li>
 
-            <li class="nav-item  open ">
-                <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">Services </span>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام   </span>
                     <span
-                        class="badge badge badge-info badge-pill float-right mr-2"></span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}} </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> Show All </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.categories')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">
-                            Create New Service </a>
+                    <li><a class="menu-item" href="{{route('admin.categories.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            قسم جديد </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  open ">
-                <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">Products </span>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">التصنيفات  </span>
                     <span
-                        class="badge badge badge-info badge-pill float-right mr-2"></span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\section::count()}} </span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> Show All </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.sections')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">
-                            Create New Product </a>
+                    <li><a class="menu-item" href="{{route('admin.sections.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            قسم جديد </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">الماركات  </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Brand::count()}} </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.brands')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.brands.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            قسم جديد </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">المنتجات  </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Product::count()}} </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.products')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.products.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            منتج جديد </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">العملاء </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\User::count()}} </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.show_users')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.users.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            منتج عميل </a>
                     </li>
                 </ul>
             </li>
@@ -41,6 +86,7 @@
 
         </ul>
         </li>
+
 
 
 
