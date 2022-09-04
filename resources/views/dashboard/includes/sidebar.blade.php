@@ -77,10 +77,41 @@
                     </li>
                     <li><a class="menu-item" href="{{route('admin.users.create')}}"
                            data-i18n="nav.dash.crypto">أضافة
-                            منتج عميل </a>
+                             عميل </a>
                     </li>
                 </ul>
             </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">الفواتير </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Invoice::count()}} </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.invoice')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.invoice.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            فاتوره </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">دفعات العميل </span>
+                    <span
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Payment::count()}} </span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.payments')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.payments.create')}}"
+                           data-i18n="nav.dash.crypto">أضافة
+                            دفعه </a>
+                    </li>
+                </ul>
+            </li>
+
 
 
 

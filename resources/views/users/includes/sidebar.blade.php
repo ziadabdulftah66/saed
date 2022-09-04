@@ -8,11 +8,23 @@
 
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الفواتير   </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2"> </span>
+
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href="{{route('user.invoices')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li class="nav-item"><a href=""><i class="la la-group"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">الدفعات   </span>
+
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('user.payments')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
 

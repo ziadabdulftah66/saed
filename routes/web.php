@@ -87,6 +87,31 @@ Route::group([
     });
 
     ################################## end users   #######################################
+    ################################## invoices routes ######################################
+    Route::group(['prefix' => 'invoices'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Invoices@index')->name('admin.invoice');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Invoices@create')->name('admin.invoice.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Invoices@store')->name('admin.invoice.store');
+        Route::get('show/{id}', 'App\Http\Controllers\Dashboard\Invoices@show')->name('admin.invoices.show');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Invoices@edit')->name('admin.invoices.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Invoices@update')->name('admin.invoices.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Invoices@destroy')->name('admin.invoices.delete');
+
+    });
+
+    ################################## end invoices   #######################################
+    ################################## payments routes ######################################
+    Route::group(['prefix' => 'Payments'], function () {
+        Route::get('/', 'App\Http\Controllers\Dashboard\Payments@index')->name('admin.payments');
+        Route::get('create', 'App\Http\Controllers\Dashboard\Payments@create')->name('admin.payments.create');
+        Route::post('store', 'App\Http\Controllers\Dashboard\Payments@store')->name('admin.payments.store');
+        Route::get('edit/{id}', 'App\Http\Controllers\Dashboard\Payments@edit')->name('admin.payments.edit');
+        Route::post('update/{id}', 'App\Http\Controllers\Dashboard\Payments@update')->name('admin.payments.update');
+        Route::get('delete/{id}', 'App\Http\Controllers\Dashboard\Payments@destroy')->name('admin.payments.delete');
+
+    });
+
+    ################################## end payments   #######################################
 });
 
 Route::group([ 'middleware' => 'guest:admin','prefix'=>'admin'], function () {

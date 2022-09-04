@@ -26,6 +26,8 @@
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
                                 class="ficon ft-maximize"></i></a></li>
                 </ul>
+
+
                 <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
@@ -69,6 +71,44 @@
 
 
                     </ul>
+                    <li class="dropdown dropdown-notification nav-item">
+                        <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
+                            <span class="notification-counter badge badge-pill badge-default badge-danger badge-default badge-up badge-glow" id="notifications_count">{{ auth()->user()->unreadNotifications->count() }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+
+                            <li class="dropdown-menu-header">
+
+                                  <span class="badge badge-pill badge-warning mr-auto my-auto float-left"><a
+                                            href="{{route('MarkAsRead_all')}}">تعين قراءة الكل</a></span>
+
+
+                            </li>
+
+                            <li class="scrollable-container media-list w-100" id="unreadNotifications">
+                                @foreach (auth()->user()->unreadNotifications as $notification)
+                                <a href="{{ route('user.invoices.show', $notification->data['id']) }}">
+                                    <div class="media">
+                                        <div class="media-left align-self-center"><i
+                                                class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading"> </h6>
+                                            <p class="notification-text font-small-3 text-muted">{{ $notification->data['title'] }}</p>
+                                            <small>
+                                                <time class="media-meta text-muted"
+                                                      datetime="2015-06-11T18:29:20+08:00">{{ $notification->created_at }}
+                                                </time>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </a>
+                                    @endforeach
+
+
+
+
+
+                            </li>
             </div>
         </div>
     </div>
